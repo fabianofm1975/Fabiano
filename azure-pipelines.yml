@@ -12,6 +12,7 @@ trigger:
     - Infra
     - Migrations
     - .vs
+    - azure-*
 
 pool:
   vmImage: ubuntu-latest
