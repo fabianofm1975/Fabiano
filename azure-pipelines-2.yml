@@ -36,3 +36,9 @@ steps:
     backendAzureRmStorageAccountName: 'automacaoterraform'
     backendAzureRmContainerName: 'terraform'
     backendAzureRmKey: 'tf/terraform.tfstate'
+    
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Azure'
