@@ -46,3 +46,4 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'validate'
+
