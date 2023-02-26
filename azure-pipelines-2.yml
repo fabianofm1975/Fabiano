@@ -40,5 +40,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'validate'
-              
+
+  - stage: tfdeploy
+  
 
