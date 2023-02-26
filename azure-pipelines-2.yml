@@ -41,3 +41,8 @@ stages:
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
+          - task: TerraformTaskV4@4
+            displayName: Validate
+            inputs:
+              provider: 'azurerm'
+              command: 'validate'
