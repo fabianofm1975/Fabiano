@@ -47,4 +47,23 @@ stages:
     jobs:
       - job: apply
         steps: 
+          - task: TerraformInstaller@1
+            displayName: Installer
+            inputs:
+              terraformVersion: 'latest'
+          - task: TerraformTaskV4@4
+            displayName: Init
+            inputs:
+              provider: 'azurerm'
+              command: 'init'
+              backendServiceArm: 'Azure'
+              backendAzureRmResourceGroupName: '$(resourcegroup)'
+              backendAzureRmStorageAccountName: '$(storageaccount)'
+              backendAzureRmContainerName: '$(blobcontainer)'
+              backendAzureRmKey: '$(terraformstatekey)'
+          - task: TerraformTaskV4@4
+            displayName: Validate
+            inputs:
+              provider: 'azurerm'
+              command: 'validate'
 
