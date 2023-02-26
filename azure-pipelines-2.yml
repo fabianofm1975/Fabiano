@@ -45,5 +45,6 @@ stages:
     condition: suceeded('tfvalidade')
     dependsOn: tfvalidate
     jobs:
-      - job: plan
+      - job: apply
+        steps: 
 
