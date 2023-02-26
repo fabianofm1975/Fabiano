@@ -42,6 +42,8 @@ stages:
               command: 'validate'
 
   - stage: tfdeploy
+    condition: suceeded('tfvalidade')
+    dependsOn: tfvalidate
     jobs:
       - job: plan
 
