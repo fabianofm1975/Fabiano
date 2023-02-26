@@ -18,3 +18,13 @@ steps:
 - task: TerraformInstaller@1
   inputs:
     terraformVersion: 'latest'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Azure'
+    backendAzureRmResourceGroupName: 'Automacao'
+    backendAzureRmStorageAccountName: 'automacaoterraform'
+    backendAzureRmContainerName: 'terraform'
+    backendAzureRmKey: 'tf/terraform.tfstate'
