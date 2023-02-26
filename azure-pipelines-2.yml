@@ -20,29 +20,22 @@ variables:
   blobcontainer: 'terraform'
   terraformstatekey: 'terraform.tfstate'
 
-steps: 
+stages:
+  - stage: tfvalidade
+    jobs:
+      - job: validade
+        continueOnError: false      
+        steps:
+          - task: TerraformInstaller@1
+            inputs:
+              terraformVersion: 'latest'
 
-- task: TerraformInstaller@1
-  inputs:
-    terraformVersion: 'latest'
-
-- task: TerraformTaskV4@4
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
-    backendServiceArm: 'Azure'
-    backendAzureRmResourceGroupName: '$(resourcegroup)'
-    backendAzureRmStorageAccountName: '$(storageaccount)'
-    backendAzureRmContainerName: '$(blobcontainer)'
-    backendAzureRmKey: '$(terraformstatekey)'
-
-- task: TerraformTaskV4@4
-  inputs:
-    provider: 'azurerm'
-    command: 'validate'
-
-- task: TerraformTaskV4@4
-  inputs:
-    provider: 'azurerm'
-    command: 'plan'
-    environmentServiceNameAzureRM: 'Azure'
+          - task: TerraformTaskV4@4
+            inputs:
+              provider: 'azurerm'
+              command: 'init'
+              backendServiceArm: 'Azure'
+              backendAzureRmResourceGroupName: '$(resourcegroup)'
+              backendAzureRmStorageAccountName: '$(storageaccount)'
+              backendAzureRmContainerName: '$(blobcontainer)'
+              backendAzureRmKey: '$(terraformstatekey)'
