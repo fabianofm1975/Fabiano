@@ -13,7 +13,7 @@ variables:
   resourcegroup: 'terraform'
   storageaccount: 'automacaoterraform'
   blobcontainer: 'terraform'
-  terraformstatekey: 'terraform.tfstate'
+  terraformstatekey: '/tf/terraform.tfstate'
   terraformdirectory: '$(System.DefaultWorkingDirectory)/Infra/'
 
 stages:
