@@ -27,10 +27,12 @@ stages:
         continueOnError: false      
         steps:
           - task: TerraformInstaller@1
+            displayname: Installer
             inputs:
               terraformVersion: 'latest'
 
           - task: TerraformTaskV4@4
+            displayName: Init
             inputs:
               provider: 'azurerm'
               command: 'init'
