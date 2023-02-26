@@ -16,7 +16,7 @@ variables:
   terraformstatekey: 'terraform.tfstate'
 
 stages:
-  - stage: tfvalidade
+  - stage: tfvalidate
     jobs:
       - job: validade
         continueOnError: false
