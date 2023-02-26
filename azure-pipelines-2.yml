@@ -14,6 +14,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  resourcegroup: 'Automacao'
+  storageaccount: 'automacaoterraform'
+  blobcontainer: 'terraform'
+  terraformstatekey: 'terraform.tfstate'
+
 steps: 
 
 - task: TerraformInstaller@1
@@ -25,10 +31,10 @@ steps:
     provider: 'azurerm'
     command: 'init'
     backendServiceArm: 'Azure'
-    backendAzureRmResourceGroupName: 'Automacao'
-    backendAzureRmStorageAccountName: 'automacaoterraform'
-    backendAzureRmContainerName: 'terraform'
-    backendAzureRmKey: 'terraform.tfstate'
+    backendAzureRmResourceGroupName: '$(resourcegroup)'
+    backendAzureRmStorageAccountName: '$(storageaccount)'
+    backendAzureRmContainerName: '$(blobcontainer)'
+    backendAzureRmKey: '$(terraformstatekey)'
 
 - task: TerraformTaskV4@4
   inputs:
