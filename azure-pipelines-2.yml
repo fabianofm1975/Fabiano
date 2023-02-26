@@ -42,5 +42,6 @@ stages:
               command: 'validate'
 
   - stage: tfdeploy
-  
+    jobs:
+      - job: plan
 
