@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  resourcegroup: 'Automacao'
+  resourcegroup: 'terraform'
   storageaccount: 'automacaoterraform'
   blobcontainer: 'terraform'
   terraformstatekey: 'terraform.tfstate'
