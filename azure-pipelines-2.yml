@@ -36,7 +36,7 @@ stages:
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/Infra/'
+              workingDirectory: '$(terraformdirectory)'
           - task: TerraformTaskV4@4
             displayName: Validate
             inputs:
@@ -63,7 +63,7 @@ stages:
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/Infra/'
+              workingDirectory: '$(terraformdirectory)'
           - task: TerraformTaskV4@4
             displayName: Validate
             inputs:
@@ -74,14 +74,14 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'plan'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/Infra/'
+              workingDirectory: '$(terraformdirectory)'
               environmentServiceNameAzureRM: 'Azure'
           - task: TerraformTaskV4@4
             displayName: Apply
             inputs:
               provider: 'azurerm'
               command: 'apply'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/Infra/'
+              workingDirectory: '$(terraformdirectory)'
               environmentServiceNameAzureRM: 'Azure'
 
 
