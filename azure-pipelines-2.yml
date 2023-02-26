@@ -14,7 +14,7 @@ variables:
   storageaccount: 'automacaoterraform'
   blobcontainer: 'terraform'
   terraformstatekey: 'terraform.tfstate'
-  workingDirectory: '$(System.DefaultWorkingDirectory)\Infra'
+  terraformdirectory: '$(System.DefaultWorkingDirectory)/Infra/'
 
 stages:
   - stage: tfvalidate
@@ -36,6 +36,7 @@ stages:
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/Infra/'
           - task: TerraformTaskV4@4
             displayName: Validate
             inputs:
@@ -62,6 +63,7 @@ stages:
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/Infra/'
           - task: TerraformTaskV4@4
             displayName: Validate
             inputs:
