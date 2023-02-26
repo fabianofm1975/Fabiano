@@ -28,7 +28,7 @@ steps:
     backendAzureRmResourceGroupName: 'Automacao'
     backendAzureRmStorageAccountName: 'automacaoterraform'
     backendAzureRmContainerName: 'terraform'
-    backendAzureRmKey: 'tf/terraform.tfstate'
+    backendAzureRmKey: 'terraform.tfstate'
 
 - task: TerraformTaskV4@4
   inputs:
