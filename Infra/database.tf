@@ -11,10 +11,4 @@ resource "azurerm_postgresql_flexible_server_configuration" "pg-automacao-cfg" {
   value     = "PGAUDIT,PG_STAT_STATEMENTS"
 }
 
-resource "azurerm_postgresql_flexible_server_database" "pg-automacao-db2" {
-  name      = "db-automacao2"
-  server_id = azurerm_postgresql_flexible_server.pg-automacao.id
-  collation = "en_US.utf8"
-  charset   = "utf8"
-}
 
