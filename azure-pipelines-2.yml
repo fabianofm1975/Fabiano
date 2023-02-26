@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  resourcegroup: 'terraform'
+  resourcegroup: 'Automacao'
   storageaccount: 'automacaoterraform'
   blobcontainer: 'terraform'
-  terraformstatekey: '/tf/terraform.tfstate'
+  terraformstatekey: 'terraform.tfstate'
   terraformdirectory: '$(System.DefaultWorkingDirectory)/Infra/'
 
 stages:
