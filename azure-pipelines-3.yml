@@ -31,13 +31,6 @@ stages:
               backendAzureRmKey: '$(terraformstatekey)'
               workingDirectory: '$(terraformdirectory)'
           - task: TerraformTaskV4@4
-            displayName: Plan
-            inputs:
-              provider: 'azurerm'
-              command: 'plan'
-              workingDirectory: '$(terraformdirectory)'
-              environmentServiceNameAzureRM: 'Azure'
-          - task: TerraformTaskV4@4
             displayName: Destroy
             inputs:
               provider: 'azurerm'
