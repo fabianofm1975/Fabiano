@@ -1,19 +1,48 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
+trigger: none
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  resourcegroup: 'Automacao'
+  storageaccount: 'automacaoterraform'
+  blobcontainer: 'terraform'
+  terraformstatekey: 'terraform.tfstate'
+  terraformdirectory: '$(System.DefaultWorkingDirectory)/Infra/'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+  - stage: tfdestroy
+    jobs:
+      - job: destroy
+        steps: 
+          - task: TerraformInstaller@1
+            displayName: Installer
+            inputs:
+              terraformVersion: 'latest'
+          - task: TerraformTaskV4@4
+            displayName: Init
+            inputs:
+              provider: 'azurerm'
+              command: 'init'
+              backendServiceArm: 'Azure'
+              backendAzureRmResourceGroupName: '$(resourcegroup)'
+              backendAzureRmStorageAccountName: '$(storageaccount)'
+              backendAzureRmContainerName: '$(blobcontainer)'
+              backendAzureRmKey: '$(terraformstatekey)'
+              workingDirectory: '$(terraformdirectory)'
+          - task: TerraformTaskV4@4
+            displayName: Plan
+            inputs:
+              provider: 'azurerm'
+              command: 'plan'
+              workingDirectory: '$(terraformdirectory)'
+              environmentServiceNameAzureRM: 'Azure'
+          - task: TerraformTaskV4@4
+            displayName: Destroy
+            inputs:
+              provider: 'azurerm'
+              command: 'destroy'
+              workingDirectory: '$(terraformdirectory)'
+              environmentServiceNameAzureRM: 'Azure'
+
+
