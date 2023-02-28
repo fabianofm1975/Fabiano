@@ -11,10 +11,6 @@ pool:
 
 variables:
 - group: Terraform
-  storageaccount: 'automacaoterraform'
-  blobcontainer: 'terraform'
-  terraformstatekey: 'terraform.tfstate'
-  terraformdirectory: '$(System.DefaultWorkingDirectory)/Infra/'
 
 stages:
   - stage: tfvalidate
