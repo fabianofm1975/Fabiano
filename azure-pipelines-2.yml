@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  resourcegroup: 'Automacao'
   storageaccount: 'automacaoterraform'
   blobcontainer: 'terraform'
   terraformstatekey: 'terraform.tfstate'
@@ -32,7 +31,7 @@ stages:
               provider: 'azurerm'
               command: 'init'
               backendServiceArm: 'Azure'
-              backendAzureRmResourceGroupName: '$(resourcegroup)'
+              backendAzureRmResourceGroupName: '$(Terraform.resourcegroup)'
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
@@ -59,7 +58,7 @@ stages:
               provider: 'azurerm'
               command: 'init'
               backendServiceArm: 'Azure'
-              backendAzureRmResourceGroupName: '$(resourcegroup)'
+              backendAzureRmResourceGroupName: '$(Terraform.resourcegroup)'
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
               backendAzureRmKey: '$(terraformstatekey)'
