@@ -15,9 +15,6 @@ variables:
   terraformstatekey: 'terraform.tfstate'
   terraformdirectory: '$(System.DefaultWorkingDirectory)/Infra/'
 
-- group: Terraform
-
-
 stages:
   - stage: tfvalidate
     jobs:
