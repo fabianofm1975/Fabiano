@@ -44,6 +44,7 @@ stages:
     dependsOn: tfvalidate
     jobs:
       - job: apply
+        environment: Infra
         steps: 
           - task: TerraformInstaller@1
             displayName: Installer
