@@ -43,7 +43,7 @@ stages:
     condition: succeeded('tfvalidate')
     dependsOn: tfvalidate
     jobs:
-      - job: apply
+      - deployment: apply
         steps: 
           - task: TerraformInstaller@1
             displayName: Installer
