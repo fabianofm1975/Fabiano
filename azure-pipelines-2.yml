@@ -74,7 +74,6 @@ stages:
               environmentServiceNameAzureRM: 'Azure'
           - task: TerraformTaskV4@4
             displayName: Apply
-            environment: Infra
             inputs:
               provider: 'azurerm'
               command: 'apply'
