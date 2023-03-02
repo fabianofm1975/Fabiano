@@ -44,7 +44,6 @@ stages:
     dependsOn: tfvalidate
     jobs:
       - job: apply
-        environment: Infra
         steps: 
           - task: TerraformInstaller@1
             displayName: Installer
@@ -75,6 +74,7 @@ stages:
               environmentServiceNameAzureRM: 'Azure'
           - task: TerraformTaskV4@4
             displayName: Apply
+            environment: Infra
             inputs:
               provider: 'azurerm'
               command: 'apply'
