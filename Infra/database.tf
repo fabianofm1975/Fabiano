@@ -5,12 +5,6 @@ resource "azurerm_postgresql_flexible_server_database" "pg-automacao-db" {
   charset   = "utf8"
 }
 
-resource "azurerm_postgresql_flexible_server_database" "pg-automacao-db2" {
-  name      = "db-automacao2"
-  server_id = azurerm_postgresql_flexible_server.pg-automacao.id
-  collation = "en_US.utf8"
-  charset   = "utf8"
-}
 
 resource "azurerm_postgresql_flexible_server_configuration" "pg-automacao-cfg" {
   name      = "azure.extensions"
