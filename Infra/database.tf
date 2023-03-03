@@ -9,5 +9,6 @@ resource "azurerm_postgresql_flexible_server_configuration" "pg-automacao-cfg" {
   name      = "azure.extensions"
   server_id = azurerm_postgresql_flexible_server.pg-automacao.id
   value     = "PGAUDIT,PG_STAT_STATEMENTS"
+
 }
 
