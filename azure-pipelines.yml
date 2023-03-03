@@ -1,5 +1,13 @@
 trigger:
-- main
+  branches:
+    include:
+    - main
+  paths:
+    exclude:
+    - Infra
+    - Migrations
+    - .vs
+    - azure-*
 
 pool:
   vmImage: ubuntu-latest
