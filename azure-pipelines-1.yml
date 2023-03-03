@@ -27,7 +27,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'Azure'
+              backendServiceArm: 'Azure RM'
               backendAzureRmResourceGroupName: '$(resourcegroup)'
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
@@ -54,7 +54,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'Azure'
+              backendServiceArm: 'Azure RM'
               backendAzureRmResourceGroupName: '$(resourcegroup)'
               backendAzureRmStorageAccountName: '$(storageaccount)'
               backendAzureRmContainerName: '$(blobcontainer)'
@@ -71,13 +71,13 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               workingDirectory: '$(terraformdirectory)'
-              environmentServiceNameAzureRM: 'Azure'
+              environmentServiceNameAzureRM: 'Azure RM'
           - task: TerraformTaskV4@4
             displayName: Apply
             inputs:
               provider: 'azurerm'
               command: 'apply'
               workingDirectory: '$(terraformdirectory)'
-              environmentServiceNameAzureRM: 'Azure'
+              environmentServiceNameAzureRM: 'Azure RM'
 
 
