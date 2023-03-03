@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Infra",
-    "\\webapp",
     "\\webapp\\src",
     "\\webapp\\src\\main",
     "\\webapp\\src\\main\\webapp"
   ],
-  "SelectedNode": "\\Infra\\main.tf",
+  "SelectedNode": "\\Infra",
   "PreviewInSolutionExplorer": false
 }
