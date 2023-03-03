@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\webapp",
     "\\webapp\\src",
     "\\webapp\\src\\main",
     "\\webapp\\src\\main\\webapp"
   ],
-  "SelectedNode": "\\Infra",
+  "SelectedNode": "\\webapp\\src\\main\\webapp\\index.jsp",
   "PreviewInSolutionExplorer": false
 }
