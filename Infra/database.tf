@@ -16,7 +16,7 @@ resource "azurerm_postgresql_flexible_server_database" "db-apresentacao" {
 resource "azurerm_postgresql_flexible_server_configuration" "pg-automacao-cfg" {
   name      = "azure.extensions"
   server_id = azurerm_postgresql_flexible_server.pg-automacao.id
-  value     = "PGAUDIT,PG_STAT_STATEMENTS"
+  value     = "PGAUDIT,PG_STAT_STATEMENTS,PG_BUFFERCACHE,PG_FREESPACEMAP,PG_REPACK,PAGEINSPACT,PG_VISIBILITY,PGSTATTUPLE"
 
 }
 
