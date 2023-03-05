@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\webapp\\src",
+    "\\webapp\\src\\main",
+    "\\webapp\\src\\main\\webapp"
   ],
   "SelectedNode": "\\Infra",
   "PreviewInSolutionExplorer": false
