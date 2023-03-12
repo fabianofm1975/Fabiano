@@ -29,7 +29,7 @@ var ab = {
     for (let [k,v] of Object.entries(data)) { form.append(k,v); }
 
     // (C2) AJAX FETCH
-    fetch("3-ajax.php", { method:"post", body:form })
+    fetch("ajax.php", { method:"post", body:form })
     .then(res => res.text())
     .then(res => after(res))
     .catch(err => console.error(err));

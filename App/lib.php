@@ -6,11 +6,8 @@ class AddressBook {
   public $lastID = null;
   public $error = "";
   function __construct () {
-    $this->pdo = new PDO(
-      "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET,
-      DB_USER, DB_PASSWORD, [
-      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    $this->pdo = new PDO( 
+      "pgsql:host=".DB_HOST."; dbname=".DB_NAME."; user=".DB_USER."; password=".DB_PASSWORD.""
     ]);
   }
 
@@ -59,11 +56,10 @@ class AddressBook {
 }
 
 // (G) DATABASE SETTINGS - CHANGE TO YOUR OWN!
-define("DB_HOST", "localhost");
-define("DB_NAME", "test");
-define("DB_CHARSET", "utf8mb4");
-define("DB_USER", "root");
-define("DB_PASSWORD", "");
+define("DB_HOST", "pg-automacao.postgres.database.azure.com");
+define("DB_NAME", "db_presentation");
+define("DB_USER", "psqladmin");
+define("DB_PASSWORD", "Stone@@2023!");
 
 // (H) ADDRESS BOOK OBJECT
 $_AB = new AddressBook();
