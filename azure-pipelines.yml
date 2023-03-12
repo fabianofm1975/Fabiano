@@ -5,6 +5,7 @@ trigger:
   paths:
     exclude:
     - Infra
+    - App
     - Migrations
     - .vs
     - azure-*
