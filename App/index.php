@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Address Book</title>
-    <script src="4b-book.js"></script>
-    <link rel="stylesheet" href="4c-book.css">
+    <script src="book.js"></script>
+    <link rel="stylesheet" href="book.css">
   </head>
   <body>
     <!-- (A) ADDRESS BOOK LIST -->

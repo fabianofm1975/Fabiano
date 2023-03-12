@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST["req"])) {
-  require "2-lib.php";
+  require "lib.php";
   switch ($_POST["req"]) {
     // (A) GET ENTRY/ENTRIES
     case "get":

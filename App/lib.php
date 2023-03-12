@@ -29,7 +29,7 @@ class AddressBook {
   // (D) GET ENTRY
   function get ($id=null) {
     $this->query(
-      "SELECT * FROM `address_book`" . ($id==null ? "" : " WHERE `id`=?"),
+      "SELECT * FROM 'address_book'" . ($id==null ? "" : " WHERE 'id'=?"),
       $id==null ? null : [$id]
     );
     return $id==null ? $this->stmt->fetchAll() : $this->stmt->fetch() ;
@@ -39,10 +39,10 @@ class AddressBook {
   function save ($name, $email, $tel, $addr, $id=null) {
     // (E1) NEW OR UPDATE
     if ($id===null) {
-      $sql = "INSERT INTO `address_book` (`name`, `email`, `tel`, `address`) VALUES (?,?,?,?)";
+      $sql = "INSERT INTO 'address_book' ('name', 'email', 'tel', 'address') VALUES (?,?,?,?)";
       $data = [$name, $email, $tel, $addr];
     } else {
-      $sql = "UPDATE `address_book` SET `name`=?, `email`=?, `tel`=?, `address`=? WHERE `id`=?";
+      $sql = "UPDATE 'address_book' SET 'name'=?, 'email'=?, 'tel'=?, 'address'=? WHERE 'id'=?";
       $data = [$name, $email, $tel, $addr, $id];
     }
 
@@ -53,7 +53,7 @@ class AddressBook {
 
   // (F) DELETE ENTRY
   function del ($id) {
-    $this->query("DELETE FROM `address_book` WHERE `id`=?", [$id]);
+    $this->query("DELETE FROM 'address_book' WHERE 'id'=?", [$id]);
     return true;
   }
 }

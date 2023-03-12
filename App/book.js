@@ -69,13 +69,13 @@ var ab = {
     if (entries.length>0) { for (let e of entries) {
       let row = document.createElement("div");
       row.className = "row";
-      row.innerHTML = `<div class="rInfo">
+      row.innerHTML = '<div class="rInfo">
         <div class="rOne">${e.name}</div>
         <div class="rTwo">${e.email} | ${e.tel}</div>
         <div class="rTwo">${e.address}</div>
       </div>
       <button class="rBtn" onclick="ab.del(${e.id})">X</button>
-      <button class="rBtn" onclick="ab.tog(${e.id})">&#9998;</button>`;
+      <button class="rBtn" onclick="ab.tog(${e.id})">&#9998;</button>';
       ab.hList.appendChild(row);
     }}
   }),
