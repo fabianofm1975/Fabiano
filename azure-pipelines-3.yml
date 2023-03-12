@@ -20,7 +20,7 @@ variables:
   environmentName: 'fabiano-agenda'
 
   # Root folder under which your composer.json file is available.
-  rootFolder: $(System.DefaultWorkingDirectory)\App
+  rootFolder: $(System.DefaultWorkingDirectory)
 
 stages:
 - stage: Build
