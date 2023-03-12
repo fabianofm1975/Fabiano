@@ -1,0 +1,74 @@
+/* (A) WHOLE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+.hide { display: none !important; }
+body {
+  max-width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  background: #f7f7f7;
+}
+
+/* (B) ADDRESS BOOK LIST */
+.row {
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #efefef;
+  background: #fff;
+}
+#abAdd {
+  color: #5a6eb7;
+  font-size: 30px;
+  justify-content: center;
+  cursor: pointer;
+}
+.rInfo {
+  flex-grow: 1;
+}
+.rOne { font-weight: 700; }
+.rTwo {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+.rBtn {
+  padding: 0 8px;
+  font-size: 24px;
+  border: 0;
+  color: #5a6eb7;
+  background: 0;
+  cursor: pointer;
+}
+
+/* (C) ADDRESS BOOK ENTRY FORM */
+#abForm {
+  padding: 20px;
+  border: 1px solid #ebebeb;
+  background: #fff;
+}
+#abForm label, #abForm input[type=text], #abForm input[type=email], #abForm textarea {
+  display: block;
+  width: 100%;
+}
+#abForm label {
+  color: #a5a5a5;
+  margin: 10px 0;
+}
+#abForm label:first-child { margin-top: 0; }
+#abForm input[type=text], #abForm input[type=email], #abForm textarea {
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  resize: none;
+}
+#abForm input[type=button], #abForm input[type=submit] {
+  margin-top: 20px;
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background: #5a6eb7;
+}
