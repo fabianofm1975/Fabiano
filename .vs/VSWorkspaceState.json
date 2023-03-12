@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Infra"
+    "\\App"
   ],
-  "SelectedNode": "\\Infra\\database.tf",
+  "SelectedNode": "\\App",
   "PreviewInSolutionExplorer": false
 }
